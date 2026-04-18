@@ -1,10 +1,22 @@
-Dataset: Kaggle Car Plate Detection
-URL: https://www.kaggle.com/datasets/andrewmvd/car-plate-detection
-Images: 433 real car photos with Pascal VOC XML annotations
-Crops: 471 license plate crops (224x64 pixels)
-Split: 376 training / 95 validation (80/20, random_state=42)
+# Project 5 — License Plate Deblurring
 
-To reproduce:
-1. Download dataset from Kaggle URL above
-2. Extract into data/archive/
-3. Run code/notebook3.ipynb from top to bottom
+Blind motion deblurring pipeline for license plates using Wiener filter 
+and CNN-based PSF estimation.
+
+## Results
+| Method | PSNR | SSIM |
+|---|---|---|
+| Blurred + Noisy | 17.77 dB | 0.402 |
+| Wiener CNN blind | 21.67 dB | 0.641 |
+| Wiener True PSF | 23.31 dB | 0.727 |
+
+## Setup
+```bash
+pip install numpy opencv-python matplotlib scikit-image scipy scikit-learn torch torchvision ipywidgets
+```
+
+## Run
+Open `code/notebook3.ipynb` and run all cells top to bottom.
+
+## Dataset
+Download from Kaggle (see data/README.txt) and extract into `data/archive/`.
